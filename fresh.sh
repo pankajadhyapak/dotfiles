@@ -31,10 +31,15 @@ mkdir $HOME/Documents/code
 mkdir $HOME/Documents/gocode
 mkdir $HOME/screenshots
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/dotfiles/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/dotfiles/plugins/zsh-syntax-highlighting
+touch ${HOME}/.hushlogin
 
+# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the dotfiles
+rm -rf $HOME/.zshrc
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+
+compaudit | xargs chmod g-w,o-w
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
