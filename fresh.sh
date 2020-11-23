@@ -2,6 +2,8 @@
 
 echo "Setting up your Mac..."
 
+sudo -v
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -39,7 +41,7 @@ touch ${HOME}/.hushlogin
 rm -rf $HOME/.zshrc
 ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 
-compaudit | xargs chmod g-w,o-w
+# compaudit | xargs chmod g-w,o-w
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
