@@ -12,6 +12,7 @@ autoload -Uz compinit && compinit
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/go/bin/:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 #ENV VARIABLES
 export GITHUB_TOKEN=''

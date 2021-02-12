@@ -23,7 +23,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gnah="git reset --hard; git clean -df;"
 alias gf="git fetch -ap"
-alias gce="git commit --amend --no-edit && git push -f"
+alias gec="git commit --amend --no-edit && git push -f"
 alias glog="glol"
 alias gdel="git branch -D"
 alias branchclean="git branch | grep -v '^*' | xargs git branch -D"
@@ -33,14 +33,13 @@ alias branchclean="git branch | grep -v '^*' | xargs git branch -D"
 alias kgp="kubectl get pods"
 alias k="kubectl"
 alias kdp="kubectl describe pod"
-alias tf="saml2aws -a hf-it  exec -- terraform"
-alias aws-hfit="aws sso login --profile sso-hf-it-developer"
-alias aws-ahoy="aws sso login --profile sso-eks-ahoy-basic"
-alias aws-live="aws sso login --profile sso-eks-live-admin"
-alias aws-staging="aws sso login --profile sso-eks-staging-admin"
-alias aws-ecr="aws ecr get-login-password --region eu-west-1 --profile sso-hf-it-developer | docker login --username AWS --password-stdin https://489198589229.dkr.ecr.eu-west-1.amazonaws.com"
 
 
 #DOCKER
 alias dkall="docker stop $(docker ps -a -q)"
 alias dps="docker ps"
+
+#GO
+alias go-lint="golangci-lint -c .golangci.yml run ./pkg/..."
+
+alias go-fix-lint="gofmt -s -w . && goimports -l -w ."
